@@ -17,6 +17,7 @@ export default class tilemap {
         loading++
         this.mapimage.onload =function() {
           loading--;
+          if(loading == 0 && options.onload) options.onload();
         }
         this.mapimage.src = options.fastmap;
       }
